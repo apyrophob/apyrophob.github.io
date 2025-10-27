@@ -8,7 +8,7 @@ const navItems = {
   '/': {
     name: 'home',
   },
-  '/about': {
+  '/about/': {
     name: 'about',
   },
 }
@@ -22,6 +22,7 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           {Object.entries(navItems).map(([path, { name }]) => {
             const isActive = pathname === path
+
             return (
               <Link
                 key={path}
