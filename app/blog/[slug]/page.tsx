@@ -85,14 +85,6 @@ export default async function Blog({ params }) {
         }}
       />
       <div className="mb-12 pb-8 border-b border-[rgb(var(--border))]/30">
-        <div className="inline-block mb-4 px-4 py-1.5 rounded-xl text-[rgb(var(--primary))] text-xs font-bold uppercase tracking-wide"
-          style={{
-            boxShadow: 'inset 2px 2px 4px rgb(var(--shadow-dark) / 0.12), inset -2px -2px 4px rgb(var(--shadow-light) / 0.3)',
-            background: 'rgb(var(--card))'
-          }}
-        >
-          Article
-        </div>
         <h1 className="title text-5xl font-bold tracking-tight text-[rgb(var(--foreground))] mb-6 leading-tight">
           {post.metadata.title}
         </h1>
