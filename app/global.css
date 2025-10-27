@@ -83,6 +83,9 @@ body {
   color: rgb(var(--foreground));
   transition: background-color 0.3s ease, color 0.3s ease;
   position: relative;
+  /* Force hardware acceleration for iOS */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 /* Subtle gradient background for neumorphism */

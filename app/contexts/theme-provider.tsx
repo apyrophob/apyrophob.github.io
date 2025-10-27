@@ -23,7 +23,11 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
     if (stored) {
       setTheme(stored)
-      document.documentElement.classList.toggle('dark', stored === 'dark')
+      if (stored === 'dark') {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
     } else if (prefersDark) {
       setTheme('dark')
       document.documentElement.classList.add('dark')
@@ -32,9 +36,24 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light'
-    setTheme(newTheme)
-    localStorage.setItem('theme', newTheme)
-    document.documentElement.classList.toggle('dark', newTheme === 'dark')
+    
+    // Force a reflow to ensure iOS Safari processes the class change
+    if (newTheme === 'dark') {
+      document.documentElement.classList.remove('dark')
+      // Use requestAnimationFrame to ensure the removal is processed
+      requestAnimationFrame(() => {
+        document.documentElement.classList.add('dark')
+        setTheme(newTheme)
+        localStorage.setItem('theme', newTheme)
+      })
+    } else {
+      document.documentElement.classList.add('dark')
+      requestAnimationFrame(() => {
+        document.documentElement.classList.remove('dark')
+        setTheme(newTheme)
+        localStorage.setItem('theme', newTheme)
+      })
+    }
   }
 
   return (
