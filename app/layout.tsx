@@ -10,15 +10,15 @@ import { ClientLayout } from './components/client-layout'
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Next.js Portfolio Starter',
-    template: '%s | Next.js Portfolio Starter',
+    default: 'Alex\'s Blog',
+    template: '%s | Alex\'s Blog',
   },
-  description: 'This is my portfolio.',
+  description: 'A place to share anything I\'m curious about.',
   openGraph: {
-    title: 'My Portfolio',
-    description: 'This is my portfolio.',
+    title: 'Alex\'s Blog',
+    description: 'A place to share anything I\'m curious about.',
     url: baseUrl,
-    siteName: 'My Portfolio',
+    siteName: 'Alex\'s Blog',
     locale: 'en_US',
     type: 'website',
   },

@@ -8,13 +8,16 @@ const navItems = {
   '/': {
     name: 'home',
   },
+  '/about': {
+    name: 'about',
+  },
 }
 
 export function Navbar() {
   const pathname = usePathname()
 
   return (
-    <nav className="mb-8 py-4">
+    <nav className="mb-4 py-4">
       <div className="flex items-center justify-between max-w-3xl mx-auto">
         <div className="flex items-center gap-3">
           {Object.entries(navItems).map(([path, { name }]) => {
