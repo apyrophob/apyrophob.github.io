@@ -11,8 +11,9 @@ export async function generateStaticParams() {
   }))
 }
 
-export function generateMetadata({ params }) {
-  let post = getBlogPosts().find((post) => post.slug === params.slug)
+export async function generateMetadata({ params }) {
+  const resolvedParams = await params
+  let post = getBlogPosts().find((post) => post.slug === resolvedParams.slug)
   if (!post) {
     return
   }
@@ -24,8 +25,8 @@ export function generateMetadata({ params }) {
     image,
   } = post.metadata
   let ogImage = image
-    ? image
-    : `${baseUrl}/og?title=${encodeURIComponent(title)}`
+    ? `${baseUrl}${image}`
+    : `${baseUrl}/og-default.png` // Use a static default OG image
 
   return {
     title,
@@ -51,8 +52,9 @@ export function generateMetadata({ params }) {
   }
 }
 
-export default function Blog({ params }) {
-  let post = getBlogPosts().find((post) => post.slug === params.slug)
+export default async function Blog({ params }) {
+  const resolvedParams = await params
+  let post = getBlogPosts().find((post) => post.slug === resolvedParams.slug)
 
   if (!post) {
     notFound()
@@ -73,7 +75,7 @@ export default function Blog({ params }) {
             description: post.metadata.summary,
             image: post.metadata.image
               ? `${baseUrl}${post.metadata.image}`
-              : `/og?title=${encodeURIComponent(post.metadata.title)}`,
+              : `${baseUrl}/og-default.png`,
             url: `${baseUrl}/blog/${post.slug}`,
             author: {
               '@type': 'Person',
