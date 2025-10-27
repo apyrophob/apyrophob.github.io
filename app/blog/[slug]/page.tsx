@@ -84,15 +84,27 @@ export default async function Blog({ params }) {
           }),
         }}
       />
-      <h1 className="title font-semibold text-2xl tracking-tighter">
-        {post.metadata.title}
-      </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm">
-        <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          {formatDate(post.metadata.publishedAt)}
-        </p>
+      <div className="mb-12 pb-8 border-b border-[rgb(var(--border))]/30">
+        <div className="inline-block mb-4 px-4 py-1.5 rounded-xl text-[rgb(var(--primary))] text-xs font-bold uppercase tracking-wide"
+          style={{
+            boxShadow: 'inset 2px 2px 4px rgb(var(--shadow-dark) / 0.12), inset -2px -2px 4px rgb(var(--shadow-light) / 0.3)',
+            background: 'rgb(var(--card))'
+          }}
+        >
+          Article
+        </div>
+        <h1 className="title text-5xl font-bold tracking-tight text-[rgb(var(--foreground))] mb-6 leading-tight">
+          {post.metadata.title}
+        </h1>
+        <div className="flex items-center gap-4 text-sm text-[rgb(var(--muted-foreground))]">
+          <time dateTime={post.metadata.publishedAt} className="font-medium">
+            {formatDate(post.metadata.publishedAt)}
+          </time>
+          <span className="text-[rgb(var(--border))]">•</span>
+          <span>{post.content.split(' ').length} words</span>
+        </div>
       </div>
-      <article className="prose">
+      <article className="prose prose-neutral dark:prose-invert max-w-none prose-lg">
         <CustomMDX source={post.content} />
       </article>
     </section>

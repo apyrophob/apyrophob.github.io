@@ -5,7 +5,7 @@ export function BlogPosts() {
   let allBlogs = getBlogPosts()
 
   return (
-    <div>
+    <div className="space-y-5">
       {allBlogs
         .sort((a, b) => {
           if (
@@ -18,17 +18,24 @@ export function BlogPosts() {
         .map((post) => (
           <Link
             key={post.slug}
-            className="flex flex-col space-y-1 mb-4"
             href={`/blog/${post.slug}`}
+            className="block group"
           >
-            <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
-              <p className="text-neutral-600 dark:text-neutral-400 w-[100px] tabular-nums">
-                {formatDate(post.metadata.publishedAt, false)}
-              </p>
-              <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
-                {post.metadata.title}
-              </p>
-            </div>
+            <article className="neu-float flex flex-col gap-3 p-6 rounded-2xl border-0 transition-all duration-300">
+              <div className="flex items-baseline justify-between gap-4 flex-wrap">
+                <h2 className="text-lg font-semibold text-[rgb(var(--foreground))] group-hover:text-[rgb(var(--primary))] transition-colors">
+                  {post.metadata.title}
+                </h2>
+                <time className="text-sm text-[rgb(var(--muted-foreground))] tabular-nums flex-shrink-0 font-medium">
+                  {formatDate(post.metadata.publishedAt, false)}
+                </time>
+              </div>
+              {post.metadata.summary && (
+                <p className="text-[rgb(var(--muted-foreground))] line-clamp-2 leading-relaxed">
+                  {post.metadata.summary}
+                </p>
+              )}
+            </article>
           </Link>
         ))}
     </div>
