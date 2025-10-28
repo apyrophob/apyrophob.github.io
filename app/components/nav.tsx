@@ -11,6 +11,9 @@ const navItems = {
   '/about/': {
     name: 'about',
   },
+  '/newsletter/': {
+    name: 'newsletter',
+  },
 }
 
 export function Navbar() {
