@@ -20,7 +20,7 @@ export default function NewsletterForm() {
         name="email" 
         id="bd-email"
         placeholder="you@example.com"
-        className="w-full px-5 py-3.5 rounded-2xl text-[rgb(var(--foreground))] mb-4 transition-all duration-200 border-0 font-medium !rounded-2xl"
+        className="w-full px-5 py-3.5 rounded-2xl text-[rgb(var(--foreground))] mb-4 transition-all duration-200 border-0 font-medium neu-pressed placeholder:text-[rgb(var(--muted-foreground))]"
         style={{ outline: 'none' }}
         required
       />
