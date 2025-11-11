@@ -107,8 +107,8 @@ body::before {
 .neu-flat {
   background: rgb(var(--card));
   box-shadow: 
-    6px 6px 12px rgb(var(--shadow-dark) / 0.2),
-    -6px -6px 12px rgb(var(--shadow-light) / 0.5);
+    6px 6px 12px rgb(var(--shadow-dark) / 0.35),
+    -6px -6px 12px rgb(var(--shadow-light) / 0.7);
 }
 
 .dark .neu-flat {
@@ -120,8 +120,8 @@ body::before {
 .neu-pressed {
   background: rgb(var(--card));
   box-shadow: 
-    inset 3px 3px 6px rgb(var(--shadow-dark) / 0.2),
-    inset -3px -3px 6px rgb(var(--shadow-light) / 0.4);
+    inset 3px 3px 6px rgb(var(--shadow-dark) / 0.35),
+    inset -3px -3px 6px rgb(var(--shadow-light) / 0.6);
 }
 
 .dark .neu-pressed {
@@ -133,8 +133,8 @@ body::before {
 .neu-float {
   background: rgb(var(--card));
   box-shadow: 
-    8px 8px 16px rgb(var(--shadow-dark) / 0.15),
-    -8px -8px 16px rgb(var(--shadow-light) / 0.5);
+    8px 8px 16px rgb(var(--shadow-dark) / 0.3),
+    -8px -8px 16px rgb(var(--shadow-light) / 0.7);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -146,8 +146,8 @@ body::before {
 
 .neu-float:hover {
   box-shadow: 
-    12px 12px 24px rgb(var(--shadow-dark) / 0.18),
-    -12px -12px 24px rgb(var(--shadow-light) / 0.6);
+    12px 12px 24px rgb(var(--shadow-dark) / 0.4),
+    -12px -12px 24px rgb(var(--shadow-light) / 0.8);
   transform: translateY(-1px);
 }
 
@@ -160,8 +160,8 @@ body::before {
 .neu-subtle {
   background: rgb(var(--card));
   box-shadow: 
-    4px 4px 8px rgb(var(--shadow-dark) / 0.12),
-    -4px -4px 8px rgb(var(--shadow-light) / 0.4);
+    4px 4px 8px rgb(var(--shadow-dark) / 0.25),
+    -4px -4px 8px rgb(var(--shadow-light) / 0.6);
 }
 
 .dark .neu-subtle {
@@ -208,8 +208,8 @@ body::before {
   background-color: rgb(var(--card));
   border-color: transparent;
   box-shadow: 
-    inset 2px 2px 4px rgb(var(--shadow-dark) / 0.12),
-    inset -2px -2px 4px rgb(var(--shadow-light) / 0.3);
+    inset 2px 2px 4px rgb(var(--shadow-dark) / 0.25),
+    inset -2px -2px 4px rgb(var(--shadow-light) / 0.5);
 }
 
 .prose code {
@@ -219,8 +219,8 @@ body::before {
   font-family: var(--font-geist-mono);
   font-weight: 500;
   box-shadow: 
-    inset 1px 1px 2px rgb(var(--shadow-dark) / 0.1),
-    inset -1px -1px 2px rgb(var(--shadow-light) / 0.3);
+    inset 1px 1px 2px rgb(var(--shadow-dark) / 0.2),
+    inset -1px -1px 2px rgb(var(--shadow-light) / 0.5);
 }
 
 .prose pre code {
@@ -237,8 +237,8 @@ body::before {
 .prose img {
   @apply m-0 rounded-lg;
   box-shadow: 
-    6px 6px 12px rgb(var(--shadow-dark) / 0.12),
-    -6px -6px 12px rgb(var(--shadow-light) / 0.4);
+    6px 6px 12px rgb(var(--shadow-dark) / 0.3),
+    -6px -6px 12px rgb(var(--shadow-light) / 0.7);
 }
 
 .prose p {
@@ -311,8 +311,8 @@ body::before {
   padding: 1rem;
   border-radius: 0 0.5rem 0.5rem 0;
   box-shadow: 
-    inset 2px 2px 4px rgb(var(--shadow-dark) / 0.1),
-    inset -1px -1px 2px rgb(var(--shadow-light) / 0.25);
+    inset 2px 2px 4px rgb(var(--shadow-dark) / 0.22),
+    inset -1px -1px 2px rgb(var(--shadow-light) / 0.45);
 }
 
 .prose > :first-child {

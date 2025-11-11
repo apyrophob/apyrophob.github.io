@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import { CustomMDX } from 'app/components/mdx'
 import { formatDate, getBlogPosts } from 'app/blog/utils'
 import { baseUrl } from 'app/sitemap'
+import { ShareButton } from 'app/components/share-button'
 
 export async function generateStaticParams() {
   let posts = getBlogPosts()
@@ -88,12 +89,18 @@ export default async function Blog({ params }) {
         <h1 className="title text-5xl font-bold tracking-tight text-[rgb(var(--foreground))] mb-6 leading-tight">
           {post.metadata.title}
         </h1>
-        <div className="flex items-center gap-4 text-sm text-[rgb(var(--muted-foreground))]">
-          <time dateTime={post.metadata.publishedAt} className="font-medium">
-            {formatDate(post.metadata.publishedAt)}
-          </time>
-          <span className="text-[rgb(var(--border))]">•</span>
-          <span>{post.content.split(' ').length} words</span>
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-4 text-sm text-[rgb(var(--muted-foreground))]">
+            <time dateTime={post.metadata.publishedAt} className="font-medium">
+              {formatDate(post.metadata.publishedAt)}
+            </time>
+            <span className="text-[rgb(var(--border))]">•</span>
+            <span>{post.content.split(' ').length} words</span>
+          </div>
+          <ShareButton 
+            title={post.metadata.title}
+            url={`${baseUrl}/blog/${post.slug}`}
+          />
         </div>
       </div>
       <article className="prose prose-neutral dark:prose-invert max-w-none prose-lg">
