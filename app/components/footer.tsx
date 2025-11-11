@@ -20,7 +20,7 @@ export default function Footer() {
     <footer>
       <div className="h-px w-full bg-gradient-to-r from-transparent via-[rgb(var(--border))] to-transparent mb-12"></div>
       <div className="flex flex-col gap-6">
-        <ul className="flex flex-wrap gap-8 text-sm">
+        <ul className="flex flex-wrap gap-4 text-sm">
           <li>
             <a
               className="flex items-center gap-2 text-[rgb(var(--muted-foreground))] hover:text-[rgb(var(--primary))] transition-all duration-200 group"
@@ -32,6 +32,32 @@ export default function Footer() {
                 <ArrowIcon />
               </span>
               <span className="font-medium">github</span>
+            </a>
+          </li>
+          <li>
+            <a
+              className="flex items-center gap-2 text-[rgb(var(--muted-foreground))] hover:text-[rgb(var(--primary))] transition-all duration-200 group"
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://www.instagram.com/apyrophob/"
+            >
+              <span className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
+                <ArrowIcon />
+              </span>
+              <span className="font-medium">instagram</span>
+            </a>
+          </li>
+          <li>
+            <a
+              className="flex items-center gap-2 text-[rgb(var(--muted-foreground))] hover:text-[rgb(var(--primary))] transition-all duration-200 group"
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://www.linkedin.com/in/alex-shkap/"
+            >
+              <span className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
+                <ArrowIcon />
+              </span>
+              <span className="font-medium">linkedin</span>
             </a>
           </li>
         </ul>
